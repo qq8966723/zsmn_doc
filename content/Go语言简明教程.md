@@ -115,6 +115,7 @@ func main() {
 ```
 * reflect.TypeOf().Kind() 可以知道某个变量的类型，我们可以看到，字符串是以 byte 数组形式保存的，类型是 uint8，占1个 byte，打印时需要用 string 进行类型转换，否则打印的是编码值。
 * 因为字符串是以 byte 数组的形式存储的，所以，str2[2] 的值并不等于语。str2 的长度 len(str2) 也不是 4，而是 8（ Go 占 2 byte，语言占 6 byte）。
+
 正确的处理方式是将 string 转为 rune 数组
 
 ```
@@ -172,6 +173,7 @@ combined := append(sub1, sub2...) // [1, 2, 3, 4, 0, 0, 0]
 ```
 * 声明切片时可以为切片设置容量大小，为切片预分配空间。在实际使用的过程中，如果容量不够，切片容量会自动扩展。
 * sub2... 是切片解构的写法，将切片解构为 N 个独立的元素。
+
 ## 3.5 字典(键值对，map)
 map 类似于 java 的 HashMap，Python的字典(dict)，是一种存储键值对(Key-Value)的数据解构。使用方式和其他语言几乎没有区别。
 
@@ -431,6 +433,7 @@ finished
 ```
 * 在 get 函数中，使用 defer 定义了异常处理的函数，在协程退出前，会执行完 defer 挂载的任务。因此如果触发了 panic，控制权就交给了 defer。
 * 在 defer 的处理逻辑中，使用 recover，使程序恢复正常，并且将返回值设置为 -1，在这里也可以不处理返回值，如果不处理返回值，返回值将被置为默认值 0。
+
 # 6 结构体，方法和接口
 ## 6.1 结构体(struct) 和方法(methods)
 结构体类似于其他语言中的 class，可以在结构体中定义多个字段，为结构体实现方法，实例化等。接下来我们定义一个结构体 Student，并为 Student 添加 name，age 字段，并实现 hello() 方法。
@@ -456,6 +459,7 @@ func main() {
 *  使用 Student{field: value, ...}的形式创建 Student 的实例，字段不需要每个都赋值，没有显性赋值的变量将被赋予默认值，例如 age 将被赋予默认值 0。
 *  实现方法与实现函数的区别在于，func 和函数名hello 之间，加上该方法对应的实例名 stu 及其类型 *Student，可以通过实例名访问该实例的字段name和其他方法了。
 * 调用方法通过 实例名.方法名(参数) 的方式。
+
 除此之外，还可以使用 new 实例化：
 
 ```
@@ -469,36 +473,7 @@ func main() {
 
 举一个简单的例子，定义一个接口 Person和对应的方法 getName() 和 getAge()：
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
+```
 type Person interface {
 	getName() string
 }
@@ -529,31 +504,27 @@ func main() {
 
 	fmt.Println(p.getName()) // Tom
 }
-Go 语言中，并不需要显式地声明实现了哪一个接口，只需要直接实现该接口对应的方法即可。
-实例化 Student后，强制类型转换为接口类型 Person。
+```
+* Go 语言中，并不需要显式地声明实现了哪一个接口，只需要直接实现该接口对应的方法即可。
+* 实例化 Student后，强制类型转换为接口类型 Person。
+
 在上面的例子中，我们在 main 函数中尝试将 Student 实例类型转换为 Person，如果 Student 没有完全实现 Person 的方法，比如我们将 (*Student).getName() 删掉，编译时会出现如下报错信息。
 
-1
+```
 *Student does not implement Person (missing getName method)
+```
 但是删除 (*Worker).getName() 程序并不会报错，因为我们并没有在 main 函数中使用。这种情况下我们如何确保某个类型实现了某个接口的所有方法呢？一般可以使用下面的方法进行检测，如果实现不完整，编译期将会报错。
 
-1
-2
+```
 var _ Person = (*Student)(nil)
 var _ Person = (*Worker)(nil)
-将空值 nil 转换为 *Student 类型，再转换为 Person 接口，如果转换失败，说明 Student 并没有实现 Person 接口的所有方法。
-Worker 同上。
+```
+* 将空值 nil 转换为 *Student 类型，再转换为 Person 接口，如果转换失败，说明 Student 并没有实现 Person 接口的所有方法。
+* Worker 同上。
+
 实例可以强制类型转换为接口，接口也可以强制类型转换为实例。
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
+```
 func main() {
 	var p Person = &Student{
 		name: "Tom",
@@ -563,16 +534,11 @@ func main() {
 	stu := p.(*Student) // 接口转为实例
 	fmt.Println(stu.getAge())
 }
-6.3 空接口
+```
+## 6.3 空接口
 如果定义了一个没有任何方法的空接口，那么这个接口可以表示任意类型。例如
 
-1
-2
-3
-4
-5
-6
-7
+```
 func main() {
 	m := make(map[string]interface{})
 	m["name"] = "Tom"
@@ -580,34 +546,14 @@ func main() {
 	m["scores"] = [3]int{98, 99, 85}
 	fmt.Println(m) // map[age:18 name:Tom scores:[98 99 85]]
 }
-7 并发编程(goroutine)
-7.1 sync
+```
+# 7 并发编程(goroutine)
+## 7.1 sync
 Go 语言提供了 sync 和 channel 两种方式支持协程(goroutine)的并发。
 
 例如我们希望并发下载 N 个资源，多个并发协程之间不需要通信，那么就可以使用 sync.WaitGroup，等待所有并发协程执行结束。
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
+```
 import (
 	"fmt"
 	"sync"
@@ -630,16 +576,12 @@ func main() {
 	wg.Wait()
 	fmt.Println("Done!")
 }
-wg.Add(1)：为 wg 添加一个计数，wg.Done()，减去一个计数。
-go download()：启动新的协程并发执行 download 函数。
-wg.Wait()：等待所有的协程执行结束。
-1
-2
-3
-4
-5
-6
-7
+```
+* wg.Add(1)：为 wg 添加一个计数，wg.Done()，减去一个计数。
+* go download()：启动新的协程并发执行 download 函数。
+* wg.Wait()：等待所有的协程执行结束。* 
+
+```
 $  time go run .
 start to download a.com/2
 start to download a.com/0
@@ -647,27 +589,12 @@ start to download a.com/1
 Done!
 
 real    0m1.563s
+```
 可以看到串行需要 3s 的下载操作，并发后，只需要 1s。
 
-7.2 channel
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
+## 7.2 channel
+
+```
 var ch = make(chan string, 10) // 创建大小为 10 的缓冲信道
 
 func download(url string) {
@@ -686,18 +613,10 @@ func main() {
 	}
 	fmt.Println("Done!")
 }
+```
 使用 channel 信道，可以在协程之间传递消息。阻塞等待并发协程返回消息。
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+```
 $ time go run .
 start to download a.com/2
 start to download a.com/0
@@ -708,31 +627,20 @@ finish a.com/0
 Done!
 
 real    0m1.528s
-8 单元测试(unit test)
+```
+# 8 单元测试(unit test)
 假设我们希望测试 package main 下 calc.go 中的函数，要只需要新建 calc_test.go 文件，在calc_test.go中新建测试用例即可。
 
-1
-2
-3
-4
-5
-6
+```
 // calc.go
 package main
 
 func add(num1 int, num2 int) int {
 	return num1 + num2
 }
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+```
+
+```
 // calc_test.go
 package main
 
@@ -743,44 +651,32 @@ func TestAdd(t *testing.T) {
 		t.Error("add(1, 2) should be equal to 3")
 	}
 }
+```
 运行 go test，将自动运行当前 package 下的所有测试用例，如果需要查看详细的信息，可以添加-v参数。
 
-1
-2
-3
-4
-5
+```
 $ go test -v
 === RUN   TestAdd
 --- PASS: TestAdd (0.00s)
 PASS
 ok      example 0.040s
-9 包(Package)和模块(Modules)
-9.1 Package
+```
+# 9 包(Package)和模块(Modules)
+## 9.1 Package
 一般来说，一个文件夹可以作为 package，同一个 package 内部变量、类型、方法等定义可以相互看到。
 
 比如我们新建一个文件 calc.go， main.go 平级，分别定义 add 和 main 方法。
 
-1
-2
-3
-4
-5
-6
+```
 // calc.go
 package main
 
 func add(num1 int, num2 int) int {
 	return num1 + num2
 }
-1
-2
-3
-4
-5
-6
-7
-8
+```
+
+```
 // main.go
 package main
 
@@ -789,48 +685,40 @@ import "fmt"
 func main() {
 	fmt.Println(add(3, 5)) // 8
 }
+```
 运行 go run main.go，会报错，add 未定义：
 
-1
+```
 ./main.go:6:14: undefined: add
+```
 因为 go run main.go 仅编译 main.go 一个文件，所以命令需要换成
 
-1
-2
+```
 $ go run main.go calc.go
 8
+```
 或
 
-1
-2
+```
 $ go run .
 8
+```
 Go 语言也有 Public 和 Private 的概念，粒度是包。如果类型/接口/方法/函数/字段的首字母大写，则是 Public 的，对其他 package 可见，如果首字母小写，则是 Private 的，对其他 package 不可见。
 
-9.2 Modules
+## 9.2 Modules
 Go Modules 是 Go 1.11 版本之后引入的，Go 1.11 之前使用 $GOPATH 机制。Go Modules 可以算作是较为完善的包管理工具。同时支持代理，国内也能享受高速的第三方包镜像服务。接下来简单介绍 go mod 的使用。Go Modules 在 1.13 版本仍是可选使用的，环境变量 GO111MODULE 的值默认为 AUTO，强制使用 Go Modules 进行依赖管理，可以将 GO111MODULE 设置为 ON。
 
 在一个空文件夹下，初始化一个 Module
 
-1
-2
+```
 $ go mod init example
 go: creating new go.mod: module example
+```
 此时，在当前文件夹下生成了go.mod，这个文件记录当前模块的模块名以及所有依赖包的版本。
 
 接着，我们在当前目录下新建文件 main.go，添加如下代码：
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
+```
 package main
 
 import (
@@ -842,55 +730,36 @@ import (
 func main() {
 	fmt.Println(quote.Hello())  // Ahoy, world!
 }
+```
 运行 go run .，将会自动触发第三方包 rsc.io/quote的下载，具体的版本信息也记录在了go.mod中：
 
-1
-2
-3
-4
-5
+```
 module example
 
 go 1.13
 
 require rsc.io/quote v3.1.0+incompatible
+```
 我们在当前目录，添加一个子 package calc，代码目录如下：
 
-1
-2
-3
-4
+```
 demo/
    |--calc/
       |--calc.go
    |--main.go
+```
 在 calc.go 中写入
 
-1
-2
-3
-4
-5
+```
 package calc
 
 func Add(num1 int, num2 int) int {
 	return num1 + num2
 }
+```
 在 package main 中如何使用 package cal 中的 Add 函数呢？import 模块名/子目录名 即可，修改后的 main 函数如下：
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
+```
 package main
 
 import (
@@ -904,13 +773,14 @@ func main() {
 	fmt.Println(quote.Hello())
 	fmt.Println(calc.Add(10, 3))
 }
-1
-2
-3
+```
+
+```
 $ go run .
 Ahoy, world!
 13
-附 参考
-golang 官方文档 - golang.org
-goproxy.cn 文档 - github.com
-Go Modules - github.com
+```
+# 附 参考
+* golang 官方文档 - golang.org
+* goproxy.cn 文档 - github.com
+* Go Modules - github.com
