@@ -1,26 +1,68 @@
 <?php
 /**
- * Typecho Blog Platform
+ * Forwarder/Router to doku.php
  *
- * @copyright  Copyright (c) 2008 Typecho team (http://www.typecho.org)
- * @license    GNU General Public License 2.0
- * @version    $Id: index.php 1153 2009-07-02 10:53:22Z magike.net $
+ * In normal usage, this script simply redirects to doku.php. However it can also be used as a routing
+ * script with PHP's builtin webserver. It takes care of .htaccess compatible rewriting, directory/file
+ * access permission checking and passing on static files.
+ *
+ * Usage example:
+ *
+ *   php -S localhost:8000 index.php
+ *
+ * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
+ * @author     Andreas Gohr <andi@splitbrain.org>
  */
-
-/** 载入配置支持 */
-if (!defined('__TYPECHO_ROOT_DIR__') && !@include_once 'config.inc.php') {
-    file_exists('./install.php') ? header('Location: install.php') : print('Missing Config File');
+if(php_sapi_name() != 'cli-server') {
+    header("Location: doku.php");
     exit;
 }
 
-/** 初始化组件 */
-Typecho_Widget::widget('Widget_Init');
+# ROUTER starts below
 
-/** 注册一个初始化插件 */
-Typecho_Plugin::factory('index.php')->begin();
+# avoid path traversal
+$_SERVER['SCRIPT_NAME'] = str_replace('/../', '/', $_SERVER['SCRIPT_NAME']);
 
-/** 开始路由分发 */
-Typecho_Router::dispatch();
+# routing aka. rewriting
+if(preg_match('/^\/_media\/(.*)/', $_SERVER['SCRIPT_NAME'], $m)) {
+    # media dispatcher
+    $_GET['media'] = $m[1];
+    require $_SERVER['DOCUMENT_ROOT'] . '/lib/exe/fetch.php';
 
-/** 注册一个结束插件 */
-Typecho_Plugin::factory('index.php')->end();
+} else if(preg_match('/^\/_detail\/(.*)/', $_SERVER['SCRIPT_NAME'], $m)) {
+    # image detail view
+    $_GET['media'] = $m[1];
+    require $_SERVER['DOCUMENT_ROOT'] . '/lib/exe/detail.php';
+
+} else if(preg_match('/^\/_media\/(.*)/', $_SERVER['SCRIPT_NAME'], $m)) {
+    # exports
+    $_GET['do'] = 'export_' . $m[1];
+    $_GET['id'] = $m[2];
+    require $_SERVER['DOCUMENT_ROOT'] . '/doku.php';
+
+} elseif($_SERVER['SCRIPT_NAME'] == '/index.php') {
+    # 404s are automatically mapped to index.php
+    if(isset($_SERVER['PATH_INFO'])) {
+        $_GET['id'] = $_SERVER['PATH_INFO'];
+    }
+    require $_SERVER['DOCUMENT_ROOT'] . '/doku.php';
+
+} else if(file_exists($_SERVER['DOCUMENT_ROOT'] . $_SERVER['SCRIPT_NAME'])) {
+    # existing files
+
+    # access limitiations
+    if(preg_match('/\/([\._]ht|README$|VERSION$|COPYING$)/', $_SERVER['SCRIPT_NAME']) or
+        preg_match('/^\/(data|conf|bin|inc)\//', $_SERVER['SCRIPT_NAME'])
+    ) {
+        die('Access denied');
+    }
+
+    if(substr($_SERVER['SCRIPT_NAME'], -4) == '.php') {
+        # php scripts
+        require $_SERVER['DOCUMENT_ROOT'] . $_SERVER['SCRIPT_NAME'];
+    } else {
+        # static files
+        return false;
+    }
+}
+# 404
