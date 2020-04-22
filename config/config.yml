@@ -8,16 +8,3 @@ site_title: tux                    # The title of your website
 # Theme
 #
 theme: bitsandpieces                # The name of your custom theme
-
-##
-# Content
-#
-
-##
-# Plugins
-#
-
-##
-# Custom
-#
-my_custom_setting: Hello World!     # You can access custom settings in themes using {{ config.my_custom_setting }}
