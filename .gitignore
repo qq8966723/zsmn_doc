@@ -13,5 +13,6 @@ desktop.ini
 # Composer
 /composer.phar
 /vendor
+/themes
 *.zip
 *.gz
