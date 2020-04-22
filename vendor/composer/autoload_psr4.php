@@ -6,7 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'splitbrain\\phpcli\\' => array($vendorDir . '/splitbrain/php-cli/src'),
-    'splitbrain\\PHPArchive\\' => array($vendorDir . '/splitbrain/php-archive/src'),
-    'phpseclib\\' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
+    'Twig\\' => array($vendorDir . '/twig/twig/src'),
+    'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
+    'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
+    'Pico\\Composer\\' => array($vendorDir . '/picocms/composer-installer/src'),
 );

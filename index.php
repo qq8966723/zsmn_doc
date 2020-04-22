@@ -1,68 +1,39 @@
-<?php
+<?php // @codingStandardsIgnoreFile
 /**
- * Forwarder/Router to doku.php
+ * This file is part of Pico. It's copyrighted by the contributors recorded
+ * in the version control history of the file, available from the following
+ * original location:
  *
- * In normal usage, this script simply redirects to doku.php. However it can also be used as a routing
- * script with PHP's builtin webserver. It takes care of .htaccess compatible rewriting, directory/file
- * access permission checking and passing on static files.
+ * <https://github.com/picocms/Pico/blob/master/index.php.dist>
  *
- * Usage example:
- *
- *   php -S localhost:8000 index.php
- *
- * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author     Andreas Gohr <andi@splitbrain.org>
+ * SPDX-License-Identifier: MIT
+ * License-Filename: LICENSE
  */
-if(php_sapi_name() != 'cli-server') {
-    header("Location: doku.php");
-    exit;
+
+// check PHP platform requirements
+if (PHP_VERSION_ID < 50306) {
+    die('Pico requires PHP 5.3.6 or above to run');
+}
+if (!extension_loaded('dom')) {
+    die("Pico requires the PHP extension 'dom' to run");
+}
+if (!extension_loaded('mbstring')) {
+    die("Pico requires the PHP extension 'mbstring' to run");
 }
 
-# ROUTER starts below
+// load dependencies
+require_once(__DIR__ . '/vendor/autoload.php');
 
-# avoid path traversal
-$_SERVER['SCRIPT_NAME'] = str_replace('/../', '/', $_SERVER['SCRIPT_NAME']);
+// instance Pico
+$pico = new Pico(
+    __DIR__,    // root dir
+    'config/',  // config dir
+    'plugins/', // plugins dir
+    'themes/'   // themes dir
+);
 
-# routing aka. rewriting
-if(preg_match('/^\/_media\/(.*)/', $_SERVER['SCRIPT_NAME'], $m)) {
-    # media dispatcher
-    $_GET['media'] = $m[1];
-    require $_SERVER['DOCUMENT_ROOT'] . '/lib/exe/fetch.php';
+// override configuration?
+//$pico->setConfig(array());
 
-} else if(preg_match('/^\/_detail\/(.*)/', $_SERVER['SCRIPT_NAME'], $m)) {
-    # image detail view
-    $_GET['media'] = $m[1];
-    require $_SERVER['DOCUMENT_ROOT'] . '/lib/exe/detail.php';
-
-} else if(preg_match('/^\/_media\/(.*)/', $_SERVER['SCRIPT_NAME'], $m)) {
-    # exports
-    $_GET['do'] = 'export_' . $m[1];
-    $_GET['id'] = $m[2];
-    require $_SERVER['DOCUMENT_ROOT'] . '/doku.php';
-
-} elseif($_SERVER['SCRIPT_NAME'] == '/index.php') {
-    # 404s are automatically mapped to index.php
-    if(isset($_SERVER['PATH_INFO'])) {
-        $_GET['id'] = $_SERVER['PATH_INFO'];
-    }
-    require $_SERVER['DOCUMENT_ROOT'] . '/doku.php';
-
-} else if(file_exists($_SERVER['DOCUMENT_ROOT'] . $_SERVER['SCRIPT_NAME'])) {
-    # existing files
-
-    # access limitiations
-    if(preg_match('/\/([\._]ht|README$|VERSION$|COPYING$)/', $_SERVER['SCRIPT_NAME']) or
-        preg_match('/^\/(data|conf|bin|inc)\//', $_SERVER['SCRIPT_NAME'])
-    ) {
-        die('Access denied');
-    }
-
-    if(substr($_SERVER['SCRIPT_NAME'], -4) == '.php') {
-        # php scripts
-        require $_SERVER['DOCUMENT_ROOT'] . $_SERVER['SCRIPT_NAME'];
-    } else {
-        # static files
-        return false;
-    }
-}
-# 404
+// run application
+echo $pico->run();

@@ -6,6 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'SimplePie' => array($vendorDir . '/simplepie/simplepie/library'),
-    'EmailAddressValidator' => array($vendorDir . '/aziraphale/email-address-validator'),
+    'Twig_' => array($vendorDir . '/twig/twig/lib'),
+    'PicoPluginInterface' => array($vendorDir . '/picocms/pico/lib'),
+    'Pico' => array($vendorDir . '/picocms/pico/lib'),
+    'ParsedownExtra' => array($vendorDir . '/erusev/parsedown-extra'),
+    'Parsedown' => array($vendorDir . '/erusev/parsedown'),
+    'AbstractPicoPlugin' => array($vendorDir . '/picocms/pico/lib'),
 );

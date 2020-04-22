@@ -1,273 +1,534 @@
 [
     {
-        "name": "geshi/geshi",
-        "version": "v1.0.9.0",
-        "version_normalized": "1.0.9.0",
+        "name": "erusev/parsedown",
+        "version": "1.8.0-beta-7",
+        "version_normalized": "1.8.0.0-beta7",
         "source": {
             "type": "git",
-            "url": "https://github.com/GeSHi/geshi-1.0.git",
-            "reference": "5a7b461338d322d941986a656d4d1651452e73dd"
+            "url": "https://github.com/erusev/parsedown.git",
+            "reference": "fe7a50eceb4a3c867cc9fa9c0aa906b1067d1955"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/GeSHi/geshi-1.0/zipball/5a7b461338d322d941986a656d4d1651452e73dd",
-            "reference": "5a7b461338d322d941986a656d4d1651452e73dd",
-            "shasum": ""
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^5.7"
-        },
-        "time": "2017-05-05T05:51:25+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/geshi/",
-                "src/geshi.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "GPL-2.0+"
-        ],
-        "authors": [
-            {
-                "name": "Benny Baumann",
-                "email": "BenBE@geshi.org",
-                "homepage": "http://blog.benny-baumann.de/",
-                "role": "Developer"
-            }
-        ],
-        "description": "Generic Syntax Highlighter",
-        "homepage": "http://qbnz.com/highlighter/"
-    },
-    {
-        "name": "openpsa/universalfeedcreator",
-        "version": "v1.8.3",
-        "version_normalized": "1.8.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/flack/UniversalFeedCreator.git",
-            "reference": "6261e130446d8f787bbfd229a602fb11e6816a4e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/flack/UniversalFeedCreator/zipball/6261e130446d8f787bbfd229a602fb11e6816a4e",
-            "reference": "6261e130446d8f787bbfd229a602fb11e6816a4e",
+            "url": "https://api.github.com/repos/erusev/parsedown/zipball/fe7a50eceb4a3c867cc9fa9c0aa906b1067d1955",
+            "reference": "fe7a50eceb4a3c867cc9fa9c0aa906b1067d1955",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "*"
-        },
-        "time": "2017-05-18T08:28:48+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "lib"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "LGPL"
-        ],
-        "authors": [
-            {
-                "name": "Andreas Flack",
-                "email": "flack@contentcontrol-berlin.de",
-                "homepage": "http://www.contentcontrol-berlin.de/"
-            }
-        ],
-        "description": "RSS and Atom feed generator by Kai Blankenhorn",
-        "keywords": [
-            "atom",
-            "georss",
-            "gpx",
-            "opml",
-            "pie",
-            "rss"
-        ]
-    },
-    {
-        "name": "aziraphale/email-address-validator",
-        "version": "2.0.1",
-        "version_normalized": "2.0.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/aziraphale/email-address-validator.git",
-            "reference": "fa25bc22c1c0b6491657c91473fae3e40719a650"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/aziraphale/email-address-validator/zipball/fa25bc22c1c0b6491657c91473fae3e40719a650",
-            "reference": "fa25bc22c1c0b6491657c91473fae3e40719a650",
-            "shasum": ""
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^5.7"
-        },
-        "time": "2017-05-22T14:05:57+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "EmailAddressValidator": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Dave Child",
-                "email": "dave@addedbytes.com"
-            },
-            {
-                "name": "Andrew Gillard",
-                "email": "andrew@lorddeath.net"
-            }
-        ],
-        "description": "Fork of AddedBytes' PHP EmailAddressValidator script, now with Composer support!",
-        "homepage": "https://github.com/aziraphale/email-address-validator"
-    },
-    {
-        "name": "marcusschwarz/lesserphp",
-        "version": "v0.5.1",
-        "version_normalized": "0.5.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/MarcusSchwarz/lesserphp.git",
-            "reference": "e9e3d53980c0e486b07c75e12f2bae5e10bdee44"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/MarcusSchwarz/lesserphp/zipball/e9e3d53980c0e486b07c75e12f2bae5e10bdee44",
-            "reference": "e9e3d53980c0e486b07c75e12f2bae5e10bdee44",
-            "shasum": ""
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~4.3"
-        },
-        "time": "2016-09-30T11:13:18+00:00",
-        "bin": [
-            "plessc"
-        ],
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "0.5.1-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "lessc.inc.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT",
-            "GPL-3.0"
-        ],
-        "authors": [
-            {
-                "name": "Leaf Corcoran",
-                "email": "leafot@gmail.com",
-                "homepage": "http://leafo.net"
-            },
-            {
-                "name": "Marcus Schwarz",
-                "email": "github@maswaba.de",
-                "homepage": "https://www.maswaba.de"
-            }
-        ],
-        "description": "lesserphp is a compiler for LESS written in PHP based on leafo's lessphp.",
-        "homepage": "http://leafo.net/lessphp/"
-    },
-    {
-        "name": "paragonie/random_compat",
-        "version": "v2.0.12",
-        "version_normalized": "2.0.12.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/paragonie/random_compat.git",
-            "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/paragonie/random_compat/zipball/258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
-            "reference": "258c89a6b97de7dfaf5b8c7607d0478e236b04fb",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "4.*|5.*"
-        },
-        "suggest": {
-            "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
-        },
-        "time": "2018-04-04T21:24:14+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "lib/random.php"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Paragon Initiative Enterprises",
-                "email": "security@paragonie.com",
-                "homepage": "https://paragonie.com"
-            }
-        ],
-        "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
-        "keywords": [
-            "csprng",
-            "pseudorandom",
-            "random"
-        ]
-    },
-    {
-        "name": "simplepie/simplepie",
-        "version": "1.5.1",
-        "version_normalized": "1.5.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/simplepie/simplepie.git",
-            "reference": "db9fff27b6d49eed3d4047cd3211ec8dba2f5d6e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/simplepie/simplepie/zipball/db9fff27b6d49eed3d4047cd3211ec8dba2f5d6e",
-            "reference": "db9fff27b6d49eed3d4047cd3211ec8dba2f5d6e",
-            "shasum": ""
-        },
-        "require": {
+            "ext-mbstring": "*",
             "php": ">=5.3.0"
         },
         "require-dev": {
-            "phpunit/phpunit": "~4 || ~5"
+            "phpunit/phpunit": "^4.8.35"
         },
-        "suggest": {
-            "mf2/mf2": "Microformat module that allows for parsing HTML for microformats"
-        },
-        "time": "2017-11-12T02:03:34+00:00",
+        "time": "2019-03-17T18:47:21+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-0": {
-                "SimplePie": "library"
+                "Parsedown": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Emanuil Rusev",
+                "email": "hello@erusev.com",
+                "homepage": "http://erusev.com"
+            }
+        ],
+        "description": "Parser for Markdown.",
+        "homepage": "http://parsedown.org",
+        "keywords": [
+            "markdown",
+            "parser"
+        ]
+    },
+    {
+        "name": "erusev/parsedown-extra",
+        "version": "0.8.0-beta-1",
+        "version_normalized": "0.8.0.0-beta1",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/erusev/parsedown-extra.git",
+            "reference": "e756b1bf8642ab1091403e902b0503f1cec7527d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/e756b1bf8642ab1091403e902b0503f1cec7527d",
+            "reference": "e756b1bf8642ab1091403e902b0503f1cec7527d",
+            "shasum": ""
+        },
+        "require": {
+            "erusev/parsedown": "^1.8.0|^1.8.0-beta-4",
+            "ext-dom": "*",
+            "ext-mbstring": "*",
+            "php": ">=5.3.6"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8.35"
+        },
+        "time": "2018-05-08T21:54:32+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "ParsedownExtra": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Emanuil Rusev",
+                "email": "hello@erusev.com",
+                "homepage": "http://erusev.com"
+            }
+        ],
+        "description": "An extension of Parsedown that adds support for Markdown Extra.",
+        "homepage": "https://github.com/erusev/parsedown-extra",
+        "keywords": [
+            "markdown",
+            "markdown extra",
+            "parsedown",
+            "parser"
+        ]
+    },
+    {
+        "name": "picocms/composer-installer",
+        "version": "v1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/picocms/composer-installer.git",
+            "reference": "6b5036c83aa091ed76e2a76ed9335885f95a7db7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/picocms/composer-installer/zipball/6b5036c83aa091ed76e2a76ed9335885f95a7db7",
+            "reference": "6b5036c83aa091ed76e2a76ed9335885f95a7db7",
+            "shasum": ""
+        },
+        "time": "2019-11-24T22:50:47+00:00",
+        "type": "composer-installer",
+        "extra": {
+            "class": "Pico\\Composer\\Installer\\PluginInstaller"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Pico\\Composer\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Daniel Rudolf",
+                "email": "picocms.org@daniel-rudolf.de",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "The Pico Community",
+                "homepage": "http://picocms.org/"
+            },
+            {
+                "name": "Contributors",
+                "homepage": "https://github.com/picocms/composer-installer/graphs/contributors"
+            }
+        ],
+        "description": "A composer plugin responsible for installing plugins and themes for Pico, a stupidly simple, blazing fast, flat file CMS.",
+        "homepage": "http://picocms.org/",
+        "keywords": [
+            "composer",
+            "composer-installer",
+            "composer-plugin",
+            "pico",
+            "pico-cms",
+            "picocms",
+            "picocms-installer",
+            "picocms-plugin",
+            "picocms-theme"
+        ]
+    },
+    {
+        "name": "picocms/pico",
+        "version": "v2.1.2",
+        "version_normalized": "2.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/picocms/Pico.git",
+            "reference": "1aca13e83d611a6cdf8052675239dc8b6a9b0292"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/picocms/Pico/zipball/1aca13e83d611a6cdf8052675239dc8b6a9b0292",
+            "reference": "1aca13e83d611a6cdf8052675239dc8b6a9b0292",
+            "shasum": ""
+        },
+        "require": {
+            "erusev/parsedown": "1.8.0-beta-7",
+            "erusev/parsedown-extra": "0.8.0-beta-1",
+            "php": ">=5.3.6",
+            "symfony/yaml": "^2.8",
+            "twig/twig": "^1.36"
+        },
+        "suggest": {
+            "picocms/composer-installer": "This Composer plugin is responsible for installing Pico plugins and themes using the Composer package manager.",
+            "picocms/pico-deprecated": "PicoDeprecated's purpose is to maintain backward compatibility to older versions of Pico.",
+            "picocms/pico-theme": "Pico requires a theme to actually display the contents of your website. This is Pico's official default theme."
+        },
+        "time": "2020-04-10T21:18:00+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1.x-dev",
+                "dev-pico-3.0": "3.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Pico": "lib/",
+                "PicoPluginInterface": "lib/",
+                "AbstractPicoPlugin": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Gilbert Pellegrom",
+                "email": "gilbert@pellegrom.me",
+                "role": "Project Founder"
+            },
+            {
+                "name": "Daniel Rudolf",
+                "email": "picocms.org@daniel-rudolf.de",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "The Pico Community",
+                "homepage": "http://picocms.org/"
+            },
+            {
+                "name": "Contributors",
+                "homepage": "https://github.com/picocms/Pico/graphs/contributors"
+            }
+        ],
+        "description": "Pico is a flat file CMS, this means there is no administration backend and database to deal with. You simply create .md files in the \"content\" folder and that becomes a page.",
+        "homepage": "http://picocms.org/",
+        "keywords": [
+            "Simple",
+            "cms",
+            "content-management",
+            "flat-file",
+            "markdown",
+            "markdown-to-html",
+            "php",
+            "pico",
+            "pico-cms",
+            "picocms",
+            "twig",
+            "website",
+            "yaml"
+        ]
+    },
+    {
+        "name": "picocms/pico-deprecated",
+        "version": "v2.1.2",
+        "version_normalized": "2.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/picocms/pico-deprecated.git",
+            "reference": "da02d7b468297d6b7e9d1fa6261ff7fced0a0cf9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/picocms/pico-deprecated/zipball/da02d7b468297d6b7e9d1fa6261ff7fced0a0cf9",
+            "reference": "da02d7b468297d6b7e9d1fa6261ff7fced0a0cf9",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "picocms/pico": "self.version"
+        },
+        "time": "2020-04-10T21:19:37+00:00",
+        "type": "pico-plugin",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1.x-dev",
+                "dev-pico-3.0": "3.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "PicoDeprecated.php",
+                "lib/",
+                "plugins/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Daniel Rudolf",
+                "email": "picocms.org@daniel-rudolf.de",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "The Pico Community",
+                "homepage": "http://picocms.org/"
+            },
+            {
+                "name": "Contributors",
+                "homepage": "https://github.com/picocms/pico-deprecated/graphs/contributors"
+            }
+        ],
+        "description": "This is Pico's official PicoDeprecated plugin. Pico is a stupidly simple, blazing fast, flat file CMS.",
+        "homepage": "http://picocms.org/",
+        "keywords": [
+            "compatibility",
+            "deprecation",
+            "pico",
+            "pico-deprecated",
+            "picocms",
+            "picocms-plugin"
+        ]
+    },
+    {
+        "name": "picocms/pico-theme",
+        "version": "v2.1.2",
+        "version_normalized": "2.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/picocms/pico-theme.git",
+            "reference": "9154fcaeb7ba11f12cebfedecbad5c6efde830fb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/picocms/pico-theme/zipball/9154fcaeb7ba11f12cebfedecbad5c6efde830fb",
+            "reference": "9154fcaeb7ba11f12cebfedecbad5c6efde830fb",
+            "shasum": ""
+        },
+        "require": {
+            "picocms/pico": "self.version"
+        },
+        "time": "2020-04-10T21:20:37+00:00",
+        "type": "pico-theme",
+        "extra": {
+            "installer-name": "default",
+            "branch-alias": {
+                "dev-master": "2.1.x-dev",
+                "dev-pico-3.0": "3.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Daniel Rudolf",
+                "email": "picocms.org@daniel-rudolf.de",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "The Pico Community",
+                "homepage": "http://picocms.org/"
+            },
+            {
+                "name": "Contributors",
+                "homepage": "https://github.com/picocms/pico-theme/graphs/contributors"
+            }
+        ],
+        "description": "This is Pico's official default theme. Pico is a stupidly simple, blazing fast, flat file CMS.",
+        "homepage": "http://picocms.org/",
+        "keywords": [
+            "default-theme",
+            "pico",
+            "pico-theme",
+            "picocms",
+            "picocms-theme"
+        ]
+    },
+    {
+        "name": "symfony/polyfill-ctype",
+        "version": "v1.15.0",
+        "version_normalized": "1.15.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/polyfill-ctype.git",
+            "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
+            "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "suggest": {
+            "ext-ctype": "For best performance"
+        },
+        "time": "2020-02-27T09:26:54+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.15-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Polyfill\\Ctype\\": ""
+            },
+            "files": [
+                "bootstrap.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Gert de Pagter",
+                "email": "BackEndTea@gmail.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony polyfill for ctype functions",
+        "homepage": "https://symfony.com",
+        "keywords": [
+            "compatibility",
+            "ctype",
+            "polyfill",
+            "portable"
+        ],
+        "funding": [
+            {
+                "url": "https://symfony.com/sponsor",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/fabpot",
+                "type": "github"
+            },
+            {
+                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                "type": "tidelift"
+            }
+        ]
+    },
+    {
+        "name": "symfony/yaml",
+        "version": "v2.8.52",
+        "version_normalized": "2.8.52.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/yaml.git",
+            "reference": "02c1859112aa779d9ab394ae4f3381911d84052b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/yaml/zipball/02c1859112aa779d9ab394ae4f3381911d84052b",
+            "reference": "02c1859112aa779d9ab394ae4f3381911d84052b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9",
+            "symfony/polyfill-ctype": "~1.8"
+        },
+        "time": "2018-11-11T11:18:13+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.8-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Yaml\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Yaml Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "twig/twig",
+        "version": "v1.36.0",
+        "version_normalized": "1.36.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/twigphp/Twig.git",
+            "reference": "730c9c4471b5152d23061feb02b03382264c8a15"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/twigphp/Twig/zipball/730c9c4471b5152d23061feb02b03382264c8a15",
+            "reference": "730c9c4471b5152d23061feb02b03382264c8a15",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "symfony/polyfill-ctype": "^1.8"
+        },
+        "require-dev": {
+            "psr/container": "^1.0",
+            "symfony/debug": "^2.7",
+            "symfony/phpunit-bridge": "^3.4.19|^4.1.8"
+        },
+        "time": "2018-12-16T10:34:11+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.36-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            },
+            "psr-4": {
+                "Twig\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -276,231 +537,26 @@
         ],
         "authors": [
             {
-                "name": "Ryan Parman",
-                "homepage": "http://ryanparman.com/",
-                "role": "Creator, alumnus developer"
-            },
-            {
-                "name": "Geoffrey Sneddon",
-                "homepage": "http://gsnedders.com/",
-                "role": "Alumnus developer"
-            },
-            {
-                "name": "Ryan McCue",
-                "email": "me@ryanmccue.info",
-                "homepage": "http://ryanmccue.info/",
-                "role": "Developer"
-            }
-        ],
-        "description": "A simple Atom/RSS parsing library for PHP",
-        "homepage": "http://simplepie.org/",
-        "keywords": [
-            "atom",
-            "feeds",
-            "rss"
-        ]
-    },
-    {
-        "name": "splitbrain/php-cli",
-        "version": "1.1.2",
-        "version_normalized": "1.1.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/splitbrain/php-cli.git",
-            "reference": "1d6f0bf9eccbfd79d1f4d185ef27573601185c23"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/splitbrain/php-cli/zipball/1d6f0bf9eccbfd79d1f4d185ef27573601185c23",
-            "reference": "1d6f0bf9eccbfd79d1f4d185ef27573601185c23",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "4.5.*"
-        },
-        "suggest": {
-            "psr/log": "Allows you to make the CLI available as PSR-3 logger"
-        },
-        "time": "2018-02-02T08:46:12+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "splitbrain\\phpcli\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Andreas Gohr",
-                "email": "andi@splitbrain.org"
-            }
-        ],
-        "description": "Easy command line scripts for PHP with opt parsing and color output. No dependencies",
-        "keywords": [
-            "argparse",
-            "cli",
-            "command line",
-            "console",
-            "getopt",
-            "optparse",
-            "terminal"
-        ]
-    },
-    {
-        "name": "phpseclib/phpseclib",
-        "version": "2.0.11",
-        "version_normalized": "2.0.11.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/phpseclib/phpseclib.git",
-            "reference": "7053f06f91b3de78e143d430e55a8f7889efc08b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/7053f06f91b3de78e143d430e55a8f7889efc08b",
-            "reference": "7053f06f91b3de78e143d430e55a8f7889efc08b",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "phing/phing": "~2.7",
-            "phpunit/phpunit": "^4.8.35|^5.7|^6.0",
-            "sami/sami": "~2.0",
-            "squizlabs/php_codesniffer": "~2.0"
-        },
-        "suggest": {
-            "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
-            "ext-libsodium": "SSH2/SFTP can make use of some algorithms provided by the libsodium-php extension.",
-            "ext-mcrypt": "Install the Mcrypt extension in order to speed up a few other cryptographic operations.",
-            "ext-openssl": "Install the OpenSSL extension in order to speed up a wide variety of cryptographic operations."
-        },
-        "time": "2018-04-15T16:55:05+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "files": [
-                "phpseclib/bootstrap.php"
-            ],
-            "psr-4": {
-                "phpseclib\\": "phpseclib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jim Wigginton",
-                "email": "terrafrost@php.net",
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
                 "role": "Lead Developer"
             },
             {
-                "name": "Patrick Monnerat",
-                "email": "pm@datasphere.ch",
-                "role": "Developer"
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com",
+                "role": "Project Founder"
             },
             {
-                "name": "Andreas Fischer",
-                "email": "bantu@phpbb.com",
-                "role": "Developer"
-            },
-            {
-                "name": "Hans-Jürgen Petrich",
-                "email": "petrich@tronic-media.com",
-                "role": "Developer"
-            },
-            {
-                "name": "Graham Campbell",
-                "email": "graham@alt-three.com",
-                "role": "Developer"
+                "name": "Twig Team",
+                "homepage": "https://twig.symfony.com/contributors",
+                "role": "Contributors"
             }
         ],
-        "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
-        "homepage": "http://phpseclib.sourceforge.net",
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "https://twig.symfony.com",
         "keywords": [
-            "BigInteger",
-            "aes",
-            "asn.1",
-            "asn1",
-            "blowfish",
-            "crypto",
-            "cryptography",
-            "encryption",
-            "rsa",
-            "security",
-            "sftp",
-            "signature",
-            "signing",
-            "ssh",
-            "twofish",
-            "x.509",
-            "x509"
-        ]
-    },
-    {
-        "name": "splitbrain/php-archive",
-        "version": "1.0.10",
-        "version_normalized": "1.0.10.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/splitbrain/php-archive.git",
-            "reference": "a46f3aaeb9f123fdb7db4e192b0600feebf7f773"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/splitbrain/php-archive/zipball/a46f3aaeb9f123fdb7db4e192b0600feebf7f773",
-            "reference": "a46f3aaeb9f123fdb7db4e192b0600feebf7f773",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4"
-        },
-        "require-dev": {
-            "ext-bz2": "*",
-            "ext-zip": "*",
-            "mikey179/vfsstream": "^1.6",
-            "phpunit/phpunit": "^4.8"
-        },
-        "suggest": {
-            "ext-iconv": "Used for proper filename encode handling",
-            "ext-mbstring": "Can be used alternatively for handling filename encoding"
-        },
-        "time": "2018-05-01T08:03:56+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "splitbrain\\PHPArchive\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Andreas Gohr",
-                "email": "andi@splitbrain.org"
-            }
-        ],
-        "description": "Pure-PHP implementation to read and write TAR and ZIP archives",
-        "keywords": [
-            "archive",
-            "extract",
-            "tar",
-            "unpack",
-            "unzip",
-            "zip"
+            "templating"
         ]
     }
 ]
