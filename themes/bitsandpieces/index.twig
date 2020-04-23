@@ -74,8 +74,8 @@
       el.insertAdjacentHTML('beforebegin', '<i id="page-toc-'+index+'" class="page-toc-scroll-marker">TOC marker</i>');
 
       var newTocNavItem = document.createElement('li');
+      console.log(newTocNavItem);
       if (el.nodeName == 'h2') {
-        console.log(el.nodeName);
         newTocNavItem.style.cssText = 'padding-left: 10px';
       }
       var newTocNavItemLink = document.createElement('a');
