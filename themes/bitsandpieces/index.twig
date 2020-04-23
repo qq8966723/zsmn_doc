@@ -75,7 +75,7 @@
 
       var newTocNavItem = document.createElement('li');
       if (el.nodeName == 'h2') {
-        el.style = 'padding-left: 10px';
+        newTocNavItem.style.cssText = 'padding-left: 10px';
       }
       var newTocNavItemLink = document.createElement('a');
       var newTocNavItemText = document.createTextNode(el.textContent);
