@@ -66,7 +66,7 @@
   function generatePageTOC() {
     var tocContainer = document.getElementById('page-toc-container');
 
-    document.querySelectorAll('.article h2').forEach(function(el, index) {
+    document.querySelectorAll('.article h1, .article h2').forEach(function(el, index) {
       // Insert a marker since anchor links breaks with css position sticky
       // sticky headers upwards are stacked at the top of the viewport
       // and therefore cannot be jumped to since they are already visible
